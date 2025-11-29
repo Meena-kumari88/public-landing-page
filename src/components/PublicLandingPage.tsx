@@ -3,14 +3,14 @@ import ServicesSection from "./ServicesSection";
 import EventItemSelector from "./ EventItemSelector";
 import Footer from "./Footer";
 // import { getLandingPage } from "../../api/landingPagesApi";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { getUserProfile } from "../../api/profileApi";
 import PublicHero from "./PublicHero";
 
 
 export default function PublicLandingPage() {
-  const [landingPage, setLandingPage] = useState<any>(null);
-  const [profilePage, setProfilePage] = useState<any>(null);
+  const [landingPage] = useState<any>(null);
+  const [profilePage] = useState<any>(null);
 //   useEffect(() => {
 //     const fetchLandingPage = async () => {
 //       try {

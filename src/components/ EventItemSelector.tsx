@@ -10,6 +10,8 @@ type Item = {
     price?: string;
 };
 export default function EventItemSelector({landingPage}: any) {
+    const data = landingPage;
+    console.log("EventItemSelector landingPage:", data);
     // Item data
     const allItems: Item[] = [
         {
