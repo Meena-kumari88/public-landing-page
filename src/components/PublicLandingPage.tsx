@@ -6,11 +6,15 @@ import Footer from "./Footer";
 import { useState } from "react";
 // import { getUserProfile } from "../../api/profileApi";
 import PublicHero from "./PublicHero";
+// import { useLocation } from "react-router-dom";
 
 
 export default function PublicLandingPage() {
+  // const location = useLocation();
   const [landingPage] = useState<any>(null);
   const [profilePage] = useState<any>(null);
+  const currentUrl = window.location.href;
+  console.log("this is current page",currentUrl); 
 //   useEffect(() => {
 //     const fetchLandingPage = async () => {
 //       try {
