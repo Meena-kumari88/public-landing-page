@@ -16,9 +16,10 @@ export default function PublicLandingPage() {
   const [profilePage] = useState<any>(null);
  
   useEffect(() =>{
-     const currentUrl = window.location.href;
-     const url = new URL(currentUrl);
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
      const token = url.searchParams.get("token")
+    // const token = "fdcdd2dc-a7bb-4050-9801-2a743e00afeb"
     console.log("this is current page",currentUrl, "Token",token);
     
     if(token){
