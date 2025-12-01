@@ -19,7 +19,7 @@ export default function PublicLandingPage() {
      const currentUrl = window.location.href;
      const url = new URL(currentUrl);
      const token = url.searchParams.get("token")
-    console.log("this is current page",currentUrl, token);
+    console.log("this is current page",currentUrl, "Token",token);
     
     if(token){
       getLandingPage(token)
