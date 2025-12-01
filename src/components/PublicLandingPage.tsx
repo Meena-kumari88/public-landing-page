@@ -3,9 +3,10 @@ import ServicesSection from "./ServicesSection";
 import EventItemSelector from "./ EventItemSelector";
 import Footer from "./Footer";
 // import { getLandingPage } from "../../api/landingPagesApi";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { getUserProfile } from "../../api/profileApi";
 import PublicHero from "./PublicHero";
+import { getLandingPage } from "./api/api";
 // import { useLocation } from "react-router-dom";
 
 
@@ -13,8 +14,20 @@ export default function PublicLandingPage() {
   // const location = useLocation();
   const [landingPage] = useState<any>(null);
   const [profilePage] = useState<any>(null);
-  const currentUrl = window.location.href;
-  console.log("this is current page",currentUrl); 
+ 
+  useEffect(() =>{
+     const currentUrl = window.location.href;
+     const url = new URL(currentUrl);
+     const token = url.searchParams.get("token")
+    console.log("this is current page",currentUrl, token);
+    
+    if(token){
+      getLandingPage(token)
+      .then(res => console.log("Landing Page Data:", res.data))
+      .catch(err => console.error("Error fetching landing page:", err));
+    }
+
+  },[])
 //   useEffect(() => {
 //     const fetchLandingPage = async () => {
 //       try {
